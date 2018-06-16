@@ -28,13 +28,20 @@ body, html {
 
 }
 
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+}
 
 
 .bgimg-1, .bgimg-2, .bgimg-3 {
 
   position: relative;
 
-  opacity: .8;
+  opacity: .4;
 
   background-attachment: fixed;
 
@@ -147,6 +154,11 @@ h3 {
 
 <body>
 
+
+<video autoplay muted loop id="myVideo">
+  <source src="/assets/videos/Smoke-Atmosphere-3.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
 
 <div class="bgimg-1">
