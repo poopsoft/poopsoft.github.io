@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 abi=[
 	{
 		"constant": false,
