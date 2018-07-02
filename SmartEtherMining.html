@@ -1,0 +1,363 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="miner.png">
+
+    <title>SmartEtherMiner.io</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="interface.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <ul class="cool" style="margin-top: -20px;">
+      <li class="cool"><a class="cool" href="#home">SmartEtherMiner.io</a></li>
+      <li class="cool"><a target="_blank" class="cool" href="https://etherscan.io/address/0xd089e34694eb023d25aadd3dc8c18337534a10c0">Etherscan</a></li>
+    </ul>
+
+      <style>body{
+        background: gainsboro;
+        width: 100%;
+      }
+      h1{
+        font-size: 30px;
+        font-weight: lighter;
+      }
+        .panel{
+          background-color: white;
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+          width: 90%;
+          padding: 5px;
+        }
+
+        .half{
+          width: 49%;
+          display: inline-block;
+        }
+        .flex{
+          display: flex;
+          justify-content: space-between;
+      }
+      </style>
+
+      <center><img src="miner.png" height="200px" width="180px"></center>
+
+      <style>ul.cool {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: royalblue;
+}
+
+li.cool {
+    float: left;
+}
+
+li a.cool {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+button{
+  border: 0px;
+  background-color: royalblue;
+  padding: 5px;
+  min-width: 100px;
+  color: white;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+input:focus, button:focus{
+  outline: none;
+}
+
+</style>
+
+     <center><div class="panel">
+        <h1 style="text-align: left;">Earn Ethereum With SmartEtherMining.io</h1>
+        <p>Introducing... a brand new way to earn Ethereum! This smart contract game allows you to earn 2% of whatever you invest every single day. Your profit is accrued every second, and can be withdrawn anytime. You also have full control over your capital. It's a HYIP on a smart contract, and fully transparent. You never need to worry about a exit scam or someone taking all the money and leaving.</p>
+        <div style="text-align: left;">
+          <h1>You oughta know...</h1>
+          <ul>
+          <li>This is a game, not a investment.</li>
+          <li>Your profit is funded by new investors.</li>
+          <li>Although this game will let more users profit than Idle games like Shrimp Idle Farm, don't put in anything you are uncomfortable losing.</li>
+        </ul>
+        </div>
+      </div>
+    </center>
+
+      <center>
+        <div class="panel">
+        <h1>Invest your ETH</h1>
+        <div style="width: 80%;">
+          <p>Invest your ETH here. You will earn 2% a day off your investment. Your capital and profit can be withdrawn anytime. Your profit is accrued every by the second in your profit wallet.</p>
+        </div>
+        <input id="investAmount" placeholder="0.00000000 ETH"><br><br>
+        <p>Minimum: 0.01 ETH</p>
+        <button onclick="investETH(sent)">INVEST</button>
+      </div>
+    </center>
+
+      <center>
+        <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
+          <div class="panel half">
+            <h1>Your active investment</h1>
+            <p>You may withdraw your investment anytime. Please know this will withdraw your entire investment, and you will stop earning interest payments. There is a 20% withdraw fee.</p>
+            <h1 id="activeInvestment" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+            <button onclick="divestETH(sent)">DIVEST</button>
+          </div>
+
+          <div class="panel half">
+            <h1>Profit Wallet</h1>
+            <p>This is interest profit that you earned. You earn interest every second. (Updated every few seconds). There is no fee for withdrawing your interest.</p>
+            <h1 id="activeProfit" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+            <button onclick="withdrawProfit(sent)">WITHDRAW</button>
+            <button onclick="reinvestProfit(sent)">REINVEST</button>
+          </div>
+        </div>
+      </center>
+
+      <center>
+        <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
+        <div class="panel half">
+        <h1>Affiliate Commision</h1>
+        <p>Any affiliate commision will show up here, instantly available to withdraw.</p>
+        <h1 id="activeCommision" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+        <button onclick="withdrawAffiliateCommision(sent)">WITHDRAW</button>
+      </div>
+
+      <div class="panel half">
+        <h1>Your referral link</h1>
+        <p>Shill your affiliate link. You will earn 5% commision of every investment made with your link.</p>
+        <h1 id="reflink" style="color: orangered; font-size: 20px; word-break: break-all;">https://SmartEtherMiner.io/?ref=address=[Please Wait]</h1>
+        <button onclick="copyToClipboard()">COPY LINK</button>
+      </div>
+    </div>
+      </center>
+
+
+  </body>
+  <script src="main.js"></script>
+  <script>
+    function sent(){
+      swal("Success", "Your order has been submitted to the blockchain, awaiting confirmation...", "success");
+    }
+  </script>
+</html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="miner.png">
+
+    <title>SmartEtherMiner.io</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron-narrow.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="interface.js"></script>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <ul class="cool" style="margin-top: -20px;">
+      <li class="cool"><a class="cool" href="#home">SmartEtherMiner.io</a></li>
+      <li class="cool"><a target="_blank" class="cool" href="https://etherscan.io/address/0xd089e34694eb023d25aadd3dc8c18337534a10c0">Etherscan</a></li>
+    </ul>
+
+      <style>body{
+        background: gainsboro;
+        width: 100%;
+      }
+      h1{
+        font-size: 30px;
+        font-weight: lighter;
+      }
+        .panel{
+          background-color: white;
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+          width: 90%;
+          padding: 5px;
+        }
+
+        .half{
+          width: 49%;
+          display: inline-block;
+        }
+        .flex{
+          display: flex;
+          justify-content: space-between;
+      }
+      </style>
+
+      <center><img src="miner.png" height="200px" width="180px"></center>
+
+      <style>ul.cool {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: royalblue;
+}
+
+li.cool {
+    float: left;
+}
+
+li a.cool {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+button{
+  border: 0px;
+  background-color: royalblue;
+  padding: 5px;
+  min-width: 100px;
+  color: white;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+input:focus, button:focus{
+  outline: none;
+}
+
+</style>
+
+     <center><div class="panel">
+        <h1 style="text-align: left;">Earn Ethereum With SmartEtherMining.io</h1>
+        <p>Introducing... a brand new way to earn Ethereum! This smart contract game allows you to earn 2% of whatever you invest every single day. Your profit is accrued every second, and can be withdrawn anytime. You also have full control over your capital. It's a HYIP on a smart contract, and fully transparent. You never need to worry about a exit scam or someone taking all the money and leaving.</p>
+        <div style="text-align: left;">
+          <h1>You oughta know...</h1>
+          <ul>
+          <li>This is a game, not a investment.</li>
+          <li>Your profit is funded by new investors.</li>
+          <li>Although this game will let more users profit than Idle games like Shrimp Idle Farm, don't put in anything you are uncomfortable losing.</li>
+        </ul>
+        </div>
+      </div>
+    </center>
+
+      <center>
+        <div class="panel">
+        <h1>Invest your ETH</h1>
+        <div style="width: 80%;">
+          <p>Invest your ETH here. You will earn 2% a day off your investment. Your capital and profit can be withdrawn anytime. Your profit is accrued every by the second in your profit wallet.</p>
+        </div>
+        <input id="investAmount" placeholder="0.00000000 ETH"><br><br>
+        <p>Minimum: 0.01 ETH</p>
+        <button onclick="investETH(sent)">INVEST</button>
+      </div>
+    </center>
+
+      <center>
+        <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
+          <div class="panel half">
+            <h1>Your active investment</h1>
+            <p>You may withdraw your investment anytime. Please know this will withdraw your entire investment, and you will stop earning interest payments. There is a 20% withdraw fee.</p>
+            <h1 id="activeInvestment" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+            <button onclick="divestETH(sent)">DIVEST</button>
+          </div>
+
+          <div class="panel half">
+            <h1>Profit Wallet</h1>
+            <p>This is interest profit that you earned. You earn interest every second. (Updated every few seconds). There is no fee for withdrawing your interest.</p>
+            <h1 id="activeProfit" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+            <button onclick="withdrawProfit(sent)">WITHDRAW</button>
+            <button onclick="reinvestProfit(sent)">REINVEST</button>
+          </div>
+        </div>
+      </center>
+
+      <center>
+        <div class="flex" style="width: 90%; margin-right: auto; margin-left: auto;">
+        <div class="panel half">
+        <h1>Affiliate Commision</h1>
+        <p>Any affiliate commision will show up here, instantly available to withdraw.</p>
+        <h1 id="activeCommision" style="color: orangered; font-size: 20px;">0.00000000 ETH</h1>
+        <button onclick="withdrawAffiliateCommision(sent)">WITHDRAW</button>
+      </div>
+
+      <div class="panel half">
+        <h1>Your referral link</h1>
+        <p>Shill your affiliate link. You will earn 5% commision of every investment made with your link.</p>
+        <h1 id="reflink" style="color: orangered; font-size: 20px; word-break: break-all;">https://SmartEtherMiner.io/?ref=address=[Please Wait]</h1>
+        <button onclick="copyToClipboard()">COPY LINK</button>
+      </div>
+    </div>
+      </center>
+
+
+  </body>
+  <script src="main.js"></script>
+  <script>
+    function sent(){
+      swal("Success", "Your order has been submitted to the blockchain, awaiting confirmation...", "success");
+    }
+  </script>
+</html>
+>>>>>>> 49dd3ba483dfe9ae8218541cc41a439fe3ce1043
