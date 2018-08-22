@@ -70,18 +70,18 @@ function superInit(){
 	// 	en: '<div style="overflow-wrap: break-word; word-wrap:break-word; word-break: break-all; width: 250px;">Withdraw using imToken</b><p>1. Scan QR code<br />2. Set the amount of eth=0, gas 20 and gas limit 1000000<br />3. Fill data field with 0x3ccfd60b<br />4. Done</div>'
 	// };
     //
-	// window.qrcodeUiWithdraw = '<table width="100%"><tr><td><div id="qrcode" style="width:180px;height:180px;"><canvas id="qrwithdraw" style="width:180px;height:180px;"></canvas></div><!--<input type="text" id="eth_textbox" onclick="selectandcopy();" value="0xC3258F4B7EC932D04F0E7704E53348153B94059E" readonly style="width:180px;" />--></td><td style="text-shadow: none;text-align:left">' + imtokenIntroWithdraw[window.lang] + '</td></tr></table>';
+	// window.qrcodeUiWithdraw = '<table width="100%"><tr><td><div id="qrcode" style="width:180px;height:180px;"><canvas id="qrwithdraw" style="width:180px;height:180px;"></canvas></div><!--<input type="text" id="eth_textbox" onclick="selectandcopy();" value="0x4D2c5308F1d9b42BDC398D215713BBC9E0738A0a" readonly style="width:180px;" />--></td><td style="text-shadow: none;text-align:left">' + imtokenIntroWithdraw[window.lang] + '</td></tr></table>';
 
 
 	// if(!window.web3){
 	// 	window.qrcodeUi = window.lang == 'zh'? '<div>二维码需要安装Metamask浏览器插件</div>' : '<div>Browser extension "Metamask" is required.</div>';
 	// } else {
 	// }
-	// window.qrcodeUi = '<table width="100%"><tr><td><div id="qrcode" style="width:180px;height:180px;"><canvas id="qr" style="width:180px;height:180px;"></canvas></div><div><input type="text" id="eth_textbox" onclick="selectandcopy();" value="0xC3258F4B7EC932D04F0E7704E53348153B94059E" readonly style="width:180px;" /></div></td><td style="text-shadow: none;text-align:left">' + imtokenIntro[window.lang] + '</td></tr></table>';
+	// window.qrcodeUi = '<table width="100%"><tr><td><div id="qrcode" style="width:180px;height:180px;"><canvas id="qr" style="width:180px;height:180px;"></canvas></div><div><input type="text" id="eth_textbox" onclick="selectandcopy();" value="0x4D2c5308F1d9b42BDC398D215713BBC9E0738A0a" readonly style="width:180px;" /></div></td><td style="text-shadow: none;text-align:left">' + imtokenIntro[window.lang] + '</td></tr></table>';
 	// if(window.lang == 'zh'){
-	// 	window.languageSwitcher = '<div class="col-auto"><span class="lead small"><a href="//en.superc.io/play">En</a></span></div><div class="col-auto"><span class="lead small"><a href="https://t.me/SuperCard" target="_blank">电报群</a></span></div><div class="col-auto"><span class="lead small"><a href="http://weibo.com/u/6585834305" target="_blank">微博</a></span></div><div class="col-auto"><span class="lead small"><a href="manual.pdf" target="_blank">教程</a></span></div><div class="col-auto"><span class="lead small"><a href="https://etherscan.io/address/0xC3258F4B7EC932D04F0E7704E53348153B94059E#code" target="_blank">合约</a></span></div>';
+	// 	window.languageSwitcher = '<div class="col-auto"><span class="lead small"><a href="//en.superc.io/play">En</a></span></div><div class="col-auto"><span class="lead small"><a href="https://t.me/SuperCard" target="_blank">电报群</a></span></div><div class="col-auto"><span class="lead small"><a href="http://weibo.com/u/6585834305" target="_blank">微博</a></span></div><div class="col-auto"><span class="lead small"><a href="manual.pdf" target="_blank">教程</a></span></div><div class="col-auto"><span class="lead small"><a href="https://etherscan.io/address/0x4D2c5308F1d9b42BDC398D215713BBC9E0738A0a#code" target="_blank">合约</a></span></div>';
 	// } else {
-	// 	window.languageSwitcher = '<div class="col-auto"><span class="lead small"><a href="//www.superc.io/play">中文</a></div><div class="col-auto"><span class="lead small"><a href="https://t.me/SuperCard" target="_blank">Telegram</a></span></div><div class="col-auto"><span class="lead small"><a href="http://weibo.com/u/6585834305" target="_blank">Weibo</a></span></div><div class="col-auto"><span class="lead small"><a href="https://etherscan.io/address/0xC3258F4B7EC932D04F0E7704E53348153B94059E#code" target="_blank">Contract</a></span></div>';
+	// 	window.languageSwitcher = '<div class="col-auto"><span class="lead small"><a href="//www.superc.io/play">中文</a></div><div class="col-auto"><span class="lead small"><a href="https://t.me/SuperCard" target="_blank">Telegram</a></span></div><div class="col-auto"><span class="lead small"><a href="http://weibo.com/u/6585834305" target="_blank">Weibo</a></span></div><div class="col-auto"><span class="lead small"><a href="https://etherscan.io/address/0x4D2c5308F1d9b42BDC398D215713BBC9E0738A0a#code" target="_blank">Contract</a></span></div>';
 	// }
 }
 
@@ -116,7 +116,7 @@ function bindEvents(){
 }
 
 function makeUrl(value, gas){
-	var address = '0xC3258F4B7EC932D04F0E7704E53348153B94059E';
+	var address = '0x4D2c5308F1d9b42BDC398D215713BBC9E0738A0a';
 	value = value.match(/(\d+\.\d+)/);
 	if(value && value.length){
 		value = value[0];
